@@ -25,9 +25,7 @@ docker swarm init
 ```
 This makes your machine the Swarm Manager.
 
-<p align="center">
-  <img src="https://github.com/TarakKatoch/My-Docker-Dockyard/raw/6608dac43e01c02694a65abaaeb704b9cb618708/Microservices%20Architecture%20using%20Docker%20Swarm/assets/Screenshot%202025-03-19%20015611.png" alt="Project Screenshot" />
-</p>
+  ![image](https://github.com/user-attachments/assets/dfeaa60a-5cac-4a64-9b8f-2ee241806a1d)
 
 ## 📁 Project Structure
 ```
@@ -104,6 +102,7 @@ docker build -t api-gateway ./api-gateway
 ```sh
 docker images
 ```
+![image](https://github.com/user-attachments/assets/d6d6f9ba-d791-4e51-98f2-88369c00769a)
 
 ## 📜 Step 4: Create Docker Compose File for Swarm
 Create `docker-compose.yml`:
@@ -144,57 +143,60 @@ networks:
 ```sh
 docker stack deploy -c docker-compose.yml my_microservices
 ```
-<p align="center">
-  <img src="https://github.com/TarakKatoch/My-Docker-Dockyard/raw/1f2c3564c5332d4c1df541e133a6ffe858f5c3e5/Microservices%20Architecture%20using%20Docker%20Swarm/assets/Screenshot%202025-03-19%20015836.png" alt="Project Screenshot 2" />
-</p>
+
+  ![image](https://github.com/user-attachments/assets/77dfb7c5-391b-400e-a924-1baf5df70d23)
+
 
 ## 📊 Step 6: Verify the Deployment
 ```sh
 docker stack services my_microservices
 ```
-<p align="center">
-  <img src="https://github.com/TarakKatoch/My-Docker-Dockyard/raw/1f2c3564c5332d4c1df541e133a6ffe858f5c3e5/Microservices%20Architecture%20using%20Docker%20Swarm/assets/Screenshot%202025-03-19%20015857.png" alt="Project Screenshot 3" />
-</p>
+  ![image](https://github.com/user-attachments/assets/7257c8e6-00ae-4873-9853-64c19034df4c)
 
 ```sh
 docker ps
 ```
-<p align="center">
-  <img src="https://github.com/TarakKatoch/My-Docker-Dockyard/raw/1f2c3564c5332d4c1df541e133a6ffe858f5c3e5/Microservices%20Architecture%20using%20Docker%20Swarm/assets/Screenshot%202025-03-19%20015912.png" alt="Project Screenshot 4" />
-</p>
+  ![image](https://github.com/user-attachments/assets/4378438f-dada-4796-ae25-10a960b612de)
 
 ## 🌐 Step 7: Access the Microservices
 Open your browser and go to:
 ```sh
 http://localhost:8080
 ```
-You should see: **API Gateway: rajput_tarakk**
+You should see: **API Gateway: NANDINI_SRIVASTAVA**
 
-<p align="center">
-  <img src="https://github.com/TarakKatoch/My-Docker-Dockyard/raw/d470c6d6dac0fd0010f139168e48e4086da874f4/Microservices%20Architecture%20using%20Docker%20Swarm/assets/Screenshot%202025-03-19%20015446.png" alt="Project Screenshot" />
-</p>
+  ![image](https://github.com/user-attachments/assets/add6a367-0685-45c7-becb-d1e16e2ee5c4)
 
 ## 🔄 Step 8: Scaling the Services
 ```sh
 docker service scale my_microservices_backend-service=5
 ```
+![image](https://github.com/user-attachments/assets/f34562b4-795b-4c80-9b81-1500a76036d4)
+
 ```sh
 docker stack services my_microservices
 ```
+![image](https://github.com/user-attachments/assets/9b0e94e5-1339-431e-85ac-699ac96facc2)
+
 
 ## 🛠 Step 9: Updating the Services
 Rebuild and update the backend service:
 ```sh
 docker build -t backend-service ./backend-service
 ```
+![image](https://github.com/user-attachments/assets/3f5e0992-45cb-477a-88be-4ebb4bc4f220)
+
 ```sh
 docker service update --image backend-service:latest my_microservices_backend-service
 ```
+![image](https://github.com/user-attachments/assets/a16672c1-8a52-4b76-89cb-44c67b0a0ee7)
 
 ## 🛑 Step 10: Remove the Stack
 ```sh
 docker stack rm my_microservices
 ```
+![image](https://github.com/user-attachments/assets/02cc838b-c192-4ccd-a44e-c9c0353ed8ed)
+
 ```sh
 docker swarm leave --force
 ```
